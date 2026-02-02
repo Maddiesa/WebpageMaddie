@@ -1,0 +1,69 @@
+/* --- Base page styles --- */
+body {
+  margin: 0;
+  background-color: rgb(127, 148, 92);
+  font-family: "Zalando Sans Expanded", Arial, sans-serif;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+/* Hero background image */
+.hero-bg {
+  width: 100%;
+  display: block;
+  z-index: 0;
+}
+
+/* Logo on top of hero */
+.hero-logo {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  max-width: 90%;
+  z-index: 2;
+}
+
+/* "café & bakery" text */
+.hero-subtitle {
+  position: absolute;
+  top: 78%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 25px;
+  color: rgb(206, 189, 155);
+  text-align: center;
+  z-index: 2;
+}
+
+/* --- BUTTON --- */
+.date-button {
+  display: block;
+  margin: 20px auto;
+  font-size: 20px;
+  color: rgb(46, 3, 3);
+  background-color: rgb(238, 164, 17);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* --- CONTACT IMAGE --- */
+.contact-img {
+  display: block;
+  margin: 30px auto;
+  width: 400px;
+  height: auto;
+}
+
+/* --- DATE OUTPUT --- */
+.date-output {
+  text-align: center;
+  color: aliceblue;
+}
