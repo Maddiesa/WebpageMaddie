@@ -29,6 +29,17 @@ body {
   z-index: 2;
 }
 
+/* Lace under logo */
+.hero-lace {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3000px;
+  max-width: 100%;
+  z-index: 2;
+}
+
 /* "café & bakery" text */
 .hero-subtitle {
   position: absolute;
