@@ -1,0 +1,68 @@
+/* Reset annoying defaults */
+body {
+  margin: 0;
+  background-color: rgb(127, 148, 92);
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+.hero-bg {
+  width: 100%;
+  display: block;
+}
+
+/* Northbound logo */
+.hero-logo {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  max-width: 90%;
+}
+
+/* Café & bakery text */
+.hero-subtitle {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: rgb(238, 164, 17);
+  font-family: "Zalando Sans Expanded", Arial, sans-serif;
+  font-size: 45px;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Button */
+.main-button {
+  display: block;
+  margin: 20px auto;
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-size: 20px;
+  color: rgb(46, 3, 3);
+  background-color: rgb(238, 164, 17);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Contact image */
+.contact-img {
+  display: block;
+  margin: 30px auto;
+  width: 400px;
+  height: auto;
+}
+
+/* Date text */
+#demo {
+  text-align: center;
+  font-family: "Zalando Sans Expanded", sans-serif;
+  color: aliceblue;
+}
