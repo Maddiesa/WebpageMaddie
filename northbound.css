@@ -30,11 +30,20 @@ body {
 
 .hero-lace {
   position: absolute;
-  top: 62%;
+  top: 92%;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 3000px;
+  z-index: 1;
+}
+.menu-lace-bottom {
+  position: absolute;
+  bottom: 260px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 100%;
   z-index: 1;
 }
 
@@ -59,7 +68,7 @@ body {
   justify-content: space-between;
 
   width: 100%;
-  margin: 100px 0; /* vertical spacing only */
+  margin: 10px 0; /* vertical spacing only */
 }
 
 /* ---------- TEA ---------- */
@@ -70,7 +79,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 100px 0;
+  margin: 105px 0; /* vertical spacing only */
 }
 
 /* ---------- IMAGE CARD ---------- */
