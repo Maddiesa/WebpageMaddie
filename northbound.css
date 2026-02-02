@@ -63,18 +63,29 @@ body {
 }
 
 /* ---------- TEA ---------- */
+/* ---------- ROW ---------- */
 
-.tea-container {
+.content-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 100px 0;
+}
+
+/* ---------- IMAGE CARD ---------- */
+
+.image-card {
   position: relative;
   width: 25%;
 }
 
-.tea-img {
+.card-img {
   width: 100%;
   display: block;
 }
 
-.drinks-title {
+.card-title {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -87,11 +98,5 @@ body {
   text-align: center;
 
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* ---------- CONTACT ---------- */
-
-.contact-img {
-  width: 25%;
-  display: block;
+  pointer-events: none;
 }
