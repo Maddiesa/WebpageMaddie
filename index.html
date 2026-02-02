@@ -1,8 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="northbound.css" />
     <meta charset="UTF-8" />
+    <title>Northbound</title>
+
+    <link rel="stylesheet" href="northbound.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,47 +14,40 @@
     />
   </head>
 
-  <body style="background-color: rgb(127, 148, 92); margin: 0">
+  <body>
     <!-- HERO SECTION -->
-    <div style="position: relative; width: 100%">
-      <!-- background -->
+    <section class="hero">
       <img
-        src="/images/greenery4.jpg"
+        src="images/greenery4.jpg"
         alt="greenery background"
-        style="width: 100%; display: block"
+        class="hero-bg"
       />
 
-      <!-- logo, works -->
       <img
-        src="/images/NORTHBOUND.png"
+        src="images/Artboard 1.png"
+        alt="lace decoration"
+        class="hero-lace"
+      />
+
+      <img
+        src="images/NORTHBOUND.png"
         alt="Northbound logo"
         class="hero-logo"
       />
-      <img src="/images/lacetrim.png" alt="lace under logo" class="hero-lace" />
-      <!-- cafe & bakery text, correct -->
+
       <h1 class="hero-subtitle">café & bakery</h1>
-    </div>
+    </section>
 
-    <!-- BUTTON kinda works men den ska inte va kvar sen -->
-    <button
-      type="button"
-      class="date-button"
-      onclick="document.getElementById('demo').innerHTML = Date()"
-    >
-      Click me to display Date and Time.
-    </button>
+    <!-- DRINKS + CONTACT ROW -->
+    <section class="content-row">
+      <!-- DRINKS -->
+      <div class="tea-container">
+        <img src="images/teapour.jpg" alt="Tea pouring" class="tea-img" />
+        <h2 class="drinks-title">DRINKS</h2>
+      </div>
 
-    <!-- CONTACT IMAGE yup -->
-    <img src="/images/contact.jpg" alt="contact image" class="contact-img" />
-
-    <!-- DATE OUTPUT -->
-    <p
-      id="demo"
-      style="
-        text-align: center;
-        font-family: &quot;Zalando Sans Expanded&quot;, sans-serif;
-        color: aliceblue;
-      "
-    ></p>
+      <!-- CONTACT -->
+      <img src="images/contact.jpg" alt="contact image" class="contact-img" />
+    </section>
   </body>
 </html>
