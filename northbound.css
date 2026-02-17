@@ -1,42 +1,11 @@
-/* da basics */
-
+/* ---------- BASE ---------- */
 body {
   margin: 0;
   background-color: rgb(127, 148, 92);
   font-family: "Zalando Sans Expanded", Arial, sans-serif;
 }
-/* Navbar overlaying menu images */
-.navbar {
-  position: absolute;
-  top: 100%; /* or adjust slightly downward */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  z-index: 5; /* above images */
-  pointer-events: auto;
-}
 
-/* Align nav items with the image columns */
-.nav-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-  width: 100%; /* same width as the content row */
-  margin: 23% auto; /* center in the page */
-  padding: 0;
-  list-style: none;
-  text-align: center;
-}
-
-.nav-item {
-  color: white;
-  font-size: 100%;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-}
-/* hero section */
-
+/* ---------- HERO ---------- */
 .hero {
   position: relative;
   width: 100%;
@@ -44,22 +13,19 @@ body {
 
 .hero-bg {
   width: 100%;
-  max-width: 1522px;
   display: block;
 }
 
-/* logo */
 .hero-logo {
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 60%;
-  max-width: 90%;
+  max-width: 800px;
   z-index: 3;
 }
 
-/* top lace, aligned med headerimage i procent osv */
 .hero-lace {
   position: absolute;
   top: 92%;
@@ -71,89 +37,110 @@ body {
   pointer-events: none;
 }
 
-/* subtitle, behöver adjust */
 .hero-subtitle {
   position: absolute;
   top: 78%;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
-  font-family: "Zalando Sans Expanded", Arial, sans-serif;
-  font-size: 60%;
-  color: rgb(220, 202, 176);
+  font-size: 80%;
+  color: rgb(206, 189, 155);
   text-align: center;
   z-index: 3;
 }
 
-/* menu section */
-
+/* ---------- MENU SECTION ---------- */
 .menu-section {
-  position: relative; /* anchor for bottom lace */
+  position: relative; /* anchor for absolute positioning */
   width: 100%;
-  min-width: 550px;
 }
 
-/* row of images */
+/* Row of images */
 .content-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  margin: 0;
-  margin-top: 7vw; /* space from lace, pics */
+  margin-top: 5vw;
+  flex-wrap: wrap; /* allows wrapping on small screens */
 }
 
-/* individual cards */
+/* Individual image card */
 .image-card {
   position: relative;
-  width: 25%;
+  width: 25%; /* 4 per row on desktop */
 }
 
 .card-img {
   width: 100%;
+  height: auto;
   display: block;
+  object-fit: contain;
 }
 
-/* titles on top of images */
+/* Titles on top of images — original style */
 .card-title {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; /* centered vertically on image */
+  left: 50%; /* centered horizontally */
   transform: translate(-50%, -50%);
-
   margin: 0;
-  font-size: 40px;
+  font-size: 90%; /* original size */
   letter-spacing: 3px;
   color: white;
   text-align: center;
-
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  pointer-events: none;
   z-index: 3;
+  pointer-events: none;
 }
 
-/* bottom lace */
+/* Bottom lace overlapping images */
+.menu-lace-wrap {
+  width: 100%;
+  text-align: center;
+}
 
+/* Bottom lace overlapping images */
 .menu-lace-bottom {
   position: absolute;
-
-  /*  like hero lace, but overlap images from bottom */
-  top: 100%;
+  top: 100%; /* start at the bottom of menu-section */
   left: 50%;
-  transform: translate(-50%, -10%);
-
+  transform: translate(-50%, -20%); /* pull it up to overlap */
   width: 100%;
   max-width: 3000px;
-  min-width: 550px;
-
   z-index: 2;
   pointer-events: none;
 }
-/* footer */
+
+/* ---------- RESPONSIVE ---------- */
+@media screen and (max-width: 1000px) {
+  .image-card {
+    width: 50%; /* 2 per rad */
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .content-row {
+    flex-direction: column; /* vertical */
+    align-items: center;
+  }
+  .image-card {
+    width: 100%; /* 1 per row */
+  }
+  .card-img {
+    height: 200px;
+    object-fit: cover;
+  }
+  .card-title {
+    font-size: 90%; /* scale smaller but keep centered */
+  }
+}
+
+/* ---------- FOOTER ---------- */
 .footer-text {
   text-align: center;
   color: white;
-  font-size: 40%;
-  margin: 10%;
+  font-size: 14px;
+  margin: 20px 0;
   pointer-events: none;
 }
