@@ -50,7 +50,9 @@ body {
 }
 
 .menu {
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 100%;
-  padding: 7vw;
+  padding: 6vw;
 }
