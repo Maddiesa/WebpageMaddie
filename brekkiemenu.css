@@ -1,0 +1,50 @@
+/* ---------- BASE ---------- */
+body {
+  margin: 0;
+  background-color: rgb(127, 148, 92);
+  font-family: "Zalando Sans Expanded", Arial, sans-serif;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+.hero-bg {
+  width: 100%;
+  display: block;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  max-width: 1000px;
+  z-index: 3;
+}
+
+.hero-lace {
+  position: absolute;
+  top: 92%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 3000px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-subtitle {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 45%;
+  color: rgb(206, 189, 155);
+  text-align: center;
+  z-index: 3;
+}
