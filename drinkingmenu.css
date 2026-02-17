@@ -48,3 +48,9 @@ body {
   text-align: center;
   z-index: 3;
 }
+
+.menu {
+  position: relative;
+  width: 100%;
+  padding: 7vw;
+}
