@@ -18,11 +18,11 @@ body {
 
 .hero-logo {
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
-  max-width: 800px;
+  width: 65%;
+  max-width: 1000px;
   z-index: 3;
 }
 
@@ -39,11 +39,11 @@ body {
 
 .hero-subtitle {
   position: absolute;
-  top: 78%;
+  top: 85%;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
-  font-size: 40%;
+  font-size: 45%;
   color: rgb(206, 189, 155);
   text-align: center;
   z-index: 3;
@@ -145,7 +145,7 @@ body {
 .footer-text {
   text-align: center;
   color: white;
-  font-size: 14px;
-  margin: 20px 0;
+  font-size: 40%;
+  margin: 20%;
   pointer-events: none;
 }
