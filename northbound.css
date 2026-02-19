@@ -1,11 +1,18 @@
-/* ---------- BASE ---------- */
+/* makes page  full height */
 body {
+  height: 100%;
   margin: 0;
   background-color: rgb(127, 148, 92);
   font-family: "Zalando Sans Expanded", Arial, sans-serif;
 }
+/* container to push footer down */
+.page-container {
+  min-height: 100vh; /* full viewport height */
+  display: flex;
+  flex-direction: column;
+}
 
-/* ---------- HERO ---------- */
+/* main content grow to push footer to bottom */
 .hero {
   position: relative;
   width: 100%;
@@ -140,12 +147,26 @@ body {
 .card-title {
   font-size: 90%;
 }
-
+.spacer {
+  flex: 1; /* takes all available vertical space */
+}
 /* FOOTER */
-.footer-text {
+.footer {
+  position: relative;
+  bottom: -150px; /* adjust as needed to overlap content */
+  width: 100%;
+  background-color: rgb(86, 100, 62);
+  padding: 20px 0; /* push footer to bottom */
   text-align: center;
   color: white;
-  font-size: 40%;
-  margin: 20%;
+}
+.footer-contact {
+  font-size: 0.8rem; /* smaller font size for contact info */
+  margin-bottom: 10px; /* space between contact and copyright */
+  pointer-events: none;
+}
+.footer-text {
+  font-size: 0.7rem; /* smaller font size for copyright */
+  margin: 0;
   pointer-events: none;
 }
