@@ -114,7 +114,7 @@ body {
 /* RESPONSIVE */
 
 /* Middle breakpoint: 2 columns, cropped */
-@media screen and (max-width: 850px) and (min-width: 500px) {
+@media screen and (max-width: 950px) and (min-width: 700px) {
   .image-card {
     width: 50%; /* 2 per row */
   }
@@ -126,7 +126,7 @@ body {
 }
 
 /* Small screens: 1 column, cropped */
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 699px) {
   .content-row {
     flex-direction: column;
     align-items: center;
@@ -157,16 +157,92 @@ body {
   width: 100%;
   background-color: rgb(86, 100, 62);
   padding: 20px 0; /* push footer to bottom */
-  text-align: center;
+  text-align: left;
   color: white;
 }
 .footer-contact {
-  font-size: 0.8rem; /* smaller font size for contact info */
+  font-size: 70%; /* smaller font size for contact info */
   margin-bottom: 10px; /* space between contact and copyright */
   pointer-events: none;
 }
 .footer-text {
-  font-size: 0.7rem; /* smaller font size for copyright */
+  font-size: 70%; /* smaller font size for copyright */
   margin: 0;
   pointer-events: none;
+}
+
+.footer-col {
+  font-size: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-left: 2%;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    li {
+      margin-bottom: 5px;
+      color: white;
+      pointer-events: none;
+    }
+  }
+}
+.footer-col h4 {
+  font-size: 100%;
+  color: #ffffff;
+  margin-bottom: 1%;
+  font-weight: 100;
+  position: relative;
+}
+.footer-col h4::before {
+  content: "hello"; /* placeholder text for the line */
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 1%;
+}
+.footer-col ul li a {
+  font-size: 80%;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #ffffff;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 10%;
+}
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(255, 247, 247);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+/*responsive*/
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
 }
