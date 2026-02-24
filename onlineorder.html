@@ -37,21 +37,30 @@
     </section>
 
     <header class="order-navbar">
-      <nav class="swipe-nav">
-        <div class="nav-list-wrapper">
-          <ul class="nav-list">
-            <li><a href="#" class="order-nav">hot drinks</a></li>
-            <li><a href="#" class="order-nav">cold drinks</a></li>
-            <li><a href="#" class="order-nav">brekkie</a></li>
-            <li><a href="#" class="order-nav">dessert</a></li>
-            <li><a href="#" class="order-nav">lunch</a></li>
-          </ul>
-        </div>
+      <nav class="nav-wrapper">
+        <ul class="nav-list">
+          <li>
+            <a href="#" class="order-nav" data-tab="hot-drinks">hot drinks</a>
+          </li>
+          <li>
+            <a href="#" class="order-nav" data-tab="cold-drinks">cold drinks</a>
+          </li>
+          <li><a href="#" class="order-nav" data-tab="brekkie">brekkie</a></li>
+          <li><a href="#" class="order-nav" data-tab="dessert">dessert</a></li>
+          <li><a href="#" class="order-nav" data-tab="lunch">lunch</a></li>
+        </ul>
       </nav>
     </header>
     <main class="content">
-      <h1>swipe to navigate</h1>
-      <p>this is where the online ordering system will be</p>
+      <!-- tab content -->
+      <section class="tab-content active" id="hot-drinks">
+        <h2>Hot Drinks</h2>
+        <div class="menu-item">
+          <span>Coffee</span>
+          <button onClick="addToCart('Coffee')">Add to Cart</button>
+        </div>
+      </section>
     </main>
+    <script src="orderscript.js"></script>
   </body>
 </html>
