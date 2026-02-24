@@ -196,15 +196,7 @@ body {
   font-weight: 100;
   position: relative;
 }
-.footer-col h4::before {
-  content: "hello"; /* placeholder text for the line */
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  height: 2px;
-  box-sizing: border-box;
-  width: 50px;
-}
+
 .footer-col ul li:not(:last-child) {
   margin-bottom: 1%;
 }
