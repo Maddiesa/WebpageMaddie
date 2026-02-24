@@ -1,11 +1,11 @@
-/* ---------- BASE ---------- */
+/* BASE - moved from prev file */
 body {
   margin: 0;
   background-color: rgb(127, 148, 92);
   font-family: "Zalando Sans Expanded", Arial, sans-serif;
 }
 
-/* ---------- HERO ---------- */
+/* HERO */
 .hero {
   position: relative;
   width: 100%;
@@ -55,4 +55,46 @@ body {
   position: relative;
   width: 100%;
   padding: 6vw;
+}
+
+.order-navbar {
+  position: sticky;
+  top: 22%;
+  z-index: 10;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background-color: rgb(64, 77, 44);
+  padding: 0 1rem; /* horizontal padding for spacing */
+  ul {
+    display: flex;
+    gap: 1rem; /* space between nav items */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.swipe-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.order-navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
