@@ -48,7 +48,9 @@ body {
   text-align: center;
   z-index: 3;
 }
-
+.hero-spacer {
+  height: 8vw; /* adjust until lace clears nicely */
+}
 .menu {
   display: flex;
   flex-direction: column;
@@ -69,21 +71,42 @@ body {
   cursor: pointer;
 }
 .order-nav.active {
+  /*girl what*/
   text-decoration: underline;
+  background-color: rgb(64, 77, 44);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 /* NAV */
 :root {
   --nav-height: 60px;
 }
+.order-nav {
+  display: inline-block;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+.order-nav.active {
+  background-color: rgb(127, 148, 92); /*bakgrund på tabs*/
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -3px; /* overlap tab content */
+}
 .order-navbar {
-  position: absolute;
+  position: relative;
   width: 100%;
-  margin-top: 8vw;
-  z-index: 10;
-  height: var(--nav-height); /* ?? */
-  display: flex;
+  margin-top: 2vw;
+  top: 0;
+  z-index: 1;
+  display: inline-block;
   align-items: center;
-  background-color: rgb(64, 77, 44);
+  background-color: rgb(64, 77, 44); /*bakgrund bakom tabs, mörk*/
+  padding-bottom: 0;
+  padding-top: 1vw;
 }
 
 .swipe-nav {
@@ -125,14 +148,28 @@ body {
 .nav-list a:hover {
   text-decoration: underline;
 }
-
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .tab-content {
   display: none; /* hide all content by default */
-  max-width: 800px;
-  margin: 2rem auto;
+  width: 100%;
+  background-color: rgb(127, 148, 92); /* ljusgrön bakom menu items lista*/
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: 8px;
   color: white;
 }
-
+.tab-container {
+  max-width: 1200px;
+  background-color: rgb(127, 148, 92); /* ljusgrön bakom menu items lista*/
+  padding: 2rem;
+  margin: 0;
+  margin-top: 
+  z-index: 2;
+  position: relative;
+}
 .tab-content.active {
   display: block; /* show active content */
 }

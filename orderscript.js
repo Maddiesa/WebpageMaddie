@@ -1,17 +1,22 @@
-const navLinks = document.querySelectorAll(".order-nav");
-const tabs = document.querySelectorAll(".tab-content");
+console.log("Order script loaded");
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".order-nav");
+  const tabs = document.querySelectorAll(".tab-content");
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    // remove active class from all links and tabs
-    navLinks.forEach((link) => link.classList.remove("active"));
-    tabs.forEach((tab) => tab.classList.remove("active"));
-    // active clicked //
-    this.classList.add("active");
-    const target = document.getElementById(this.dataset.tab);
-    if (target) {
-      target.classList.add("active");
-    }
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const targetId = link.getAttribute("data-tab");
+      const targetTab = document.getElementById(targetId);
+
+      if (!targetTab) return;
+
+      tabs.forEach((tab) => tab.classList.remove("active"));
+      navLinks.forEach((l) => l.classList.remove("active"));
+
+      targetTab.classList.add("active");
+      link.classList.add("active");
+    });
   });
 });

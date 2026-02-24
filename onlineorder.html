@@ -35,31 +35,49 @@
       />
       <h1 class="hero-subtitle">café & bakery</h1>
     </section>
-
+    <div class="hero-spacer"></div>
+    <!-- Spacer to prevent content from being hidden behind the fixed hero section -->
     <header class="order-navbar">
-      <nav class="nav-wrapper">
-        <ul class="nav-list">
-          <li>
-            <a href="#" class="order-nav" data-tab="hot-drinks">hot drinks</a>
-          </li>
-          <li>
-            <a href="#" class="order-nav" data-tab="cold-drinks">cold drinks</a>
-          </li>
-          <li><a href="#" class="order-nav" data-tab="brekkie">brekkie</a></li>
-          <li><a href="#" class="order-nav" data-tab="dessert">dessert</a></li>
-          <li><a href="#" class="order-nav" data-tab="lunch">lunch</a></li>
-        </ul>
-      </nav>
+      <div class="inner-nav">
+        <nav class="nav-wrapper">
+          <ul class="nav-list">
+            <li>
+              <a href="#" class="order-nav" data-tab="hot-drinks">hot drinks</a>
+            </li>
+            <li>
+              <a href="#" class="order-nav" data-tab="cold-drinks"
+                >cold drinks</a
+              >
+            </li>
+            <li>
+              <a href="#" class="order-nav" data-tab="brekkie">brekkie</a>
+            </li>
+            <li>
+              <a href="#" class="order-nav" data-tab="dessert">dessert</a>
+            </li>
+            <li><a href="#" class="order-nav" data-tab="lunch">lunch</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <main class="content">
-      <!-- tab content -->
+    <main class="tab-container">
       <section class="tab-content active" id="hot-drinks">
-        <h2>Hot Drinks</h2>
         <div class="menu-item">
-          <span>Coffee</span>
-          <button onClick="addToCart('Coffee')">Add to Cart</button>
+          <span>Latte</span>
+          <span>$3.00</span>
+          <span class="item-description">Espresso with steamed milk</span>
+          <span class="item-description">Add a flavor shot for $0.50</span>
+          <button onClick="addToCart('Latte')">Add to Cart</button>
         </div>
       </section>
+
+      <section class="tab-content" id="cold-drinks"></section>
+
+      <section class="tab-content" id="brekkie"></section>
+
+      <section class="tab-content" id="dessert"></section>
+
+      <section class="tab-content" id="lunch"></section>
     </main>
     <script src="orderscript.js"></script>
   </body>
