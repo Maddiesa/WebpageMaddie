@@ -56,45 +56,63 @@ body {
   width: 100%;
   padding: 6vw;
 }
-
+/* NAV */
+:root {
+  --nav-height: 60px;
+}
 .order-navbar {
-  position: sticky;
-  top: 22%;
+  position: absolute;
+  width: 100%;
+  top: 25%;
   z-index: 10;
-  height: var(--nav-height);
+  height: var(--nav-height); /* ?? */
   display: flex;
   align-items: center;
   background-color: rgb(64, 77, 44);
-  padding: 0 1rem; /* horizontal padding for spacing */
-  ul {
-    display: flex;
-    gap: 1rem; /* space between nav items */
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    li {
-      a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.2rem;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
 }
 
 .swipe-nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  postition: relative;
+}
+
+/*scroll contain*/
+.nav-container {
+  width: 100%;
+  overflow-x: auto;
+}
+/* swipe contain*/
+.nav-list {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem; /* space between nav items */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap; /* prevent wrapping */
+}
+.nav-list-wrapper {
   width: 100%;
 }
 
-.order-navbar-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+/*links*/
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.nav-list a:hover {
+  text-decoration: underline;
+}
+
+/* desktop*/
+@media (min-width: 768px) {
+  .order-navbar {
+    justify-content: center; /* center nav on desktop */
+  }
+  .nav-list {
+    gap: 2rem; /* more space between items on desktop */
+  }
 }
