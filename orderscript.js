@@ -85,6 +85,7 @@ function renderCart() {
     cartCount.textContent = itemCount;
   }
 }
+// Cart toggle behöver justera men pallar inte idag lol //
 const cartSidebar = document.getElementById("cart-sidebar");
 const cartToggle = document.getElementById("cart-toggle");
 
