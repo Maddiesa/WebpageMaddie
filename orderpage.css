@@ -72,17 +72,21 @@ body {
 .cart-sidebar {
   position: fixed;
   top: 0;
-  right: -300px; /* hidden by default */
-  width: 300px;
-  height: 100%;
+  right: 0; /* hidden unless opened */
+  width: 350px;
+  max-width: 90vw;
+  height: 100vh;
   background-color: rgb(89, 103, 67);
-  padding: 1rem;
-  transition: right 0.3s ease;
-  overflow-y: auto;
+  color: white;
+  padding: 20px;
+  transform: translateX(100%); /* should be hidden*/
+  transition: transform 0.3s ease;
+  overflow-y: auto; /* for scrolling */
   z-index: 999;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
 }
 .cart-sidebar.open {
-  right: 0; /* show sidebar */
+  transform: translate(0);
 }
 .menu {
   display: flex;

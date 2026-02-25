@@ -37,7 +37,16 @@ document.addEventListener("click", function (e) {
 });
 
 function addToCart(name, price) {
-  cart.push({ name, price, quantity: 1 });
+  const existingItem = cart.find((item) => item.name === name);
+  if (existingItem) {
+    existingItem.quantity++;
+  } else {
+    cart.push({
+      name: name,
+      price: price,
+      quantity: 1,
+    });
+  }
 
   console.log("Added:", name);
   console.log("Cart:", cart);
@@ -71,8 +80,11 @@ function renderCart() {
   });
 
   cartTotal.innerHTML = `<strong>Total: $${total.toFixed(2)}</strong>`;
-}
 
+  if (cartCount) {
+    cartCount.textContent = itemCount;
+  }
+}
 const cartSidebar = document.getElementById("cart-sidebar");
 const cartToggle = document.getElementById("cart-toggle");
 
@@ -82,3 +94,17 @@ if (cartToggle && cartSidebar) {
     cartSidebar.classList.toggle("open");
   });
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const cartSidebar = document.getElementById("cart-sidebar");
+  const cartToggle = document.getElementById("cart-toggle");
+
+  if (!cartSidebar || !cartToggle) {
+    console.error("Cart toggle or sidebar not found.");
+    return;
+  }
+
+  cartToggle.addEventListener("click", function () {
+    cartSidebar.classList.toggle("open");
+    console.log("Cart toggled");
+  });
+});
