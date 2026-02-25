@@ -13,6 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="data:,">
   </head>
 
   <body>
@@ -36,13 +37,11 @@
       <h1 class="hero-subtitle">café & bakery</h1>
     </section>
     <div class="hero-spacer"></div>
-    <!-- Spacer to prevent content from being hidden behind the fixed hero section -->
+
+
+    <!-- ORDER SECTION -->
     <header class="order-navbar">
-      <div class="cart">
-        <h2>your caart</h2>
-        <div id="cart-items"></div>
-        <div id="cart-total"></div>
-      </div>
+
       <div class="inner-nav">
         <nav class="nav-wrapper">
           <ul class="nav-list">
@@ -75,9 +74,9 @@
           </button>
         </div>
         <div class="menu-item">
-          <span>Latte</span>
-          <span>$3.00</span>
-          <button class="add-button" data-name="Latte" data-price="3.00">
+          <span>Cappuccino</span>
+          <span>$4.00</span>
+          <button class="add-button" data-name="Cappuccino" data-price="4.00">
             Add to Cart
           </button>
       </section>
@@ -104,6 +103,16 @@
 
       <section class="tab-content" id="lunch"></section>
     </main>
+    
     <script src="orderscript.js"></script>
+    <!-- cart button!-->
+    <button id="cart-toggle" class="cart-toggle">Toggle Cart (<span id="cart-count">0</span>)</button>
+    <!-- cart sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <h2>your caart</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+    </div>
+
   </body>
 </html>

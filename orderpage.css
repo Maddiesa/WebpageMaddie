@@ -51,6 +51,39 @@ body {
 .hero-spacer {
   height: 8vw; /* adjust until lace clears nicely */
 }
+.cart {
+  top: 25%;
+  width: 20vw;
+  height: 4vw;
+  background-color: rgb(89, 103, 67);
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+  z-index: 1;
+}
+.cart-toggle {
+  position: fixed;
+  top: 20%;
+  right: 20%;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px; /* hidden by default */
+  width: 300px;
+  height: 100%;
+  background-color: rgb(89, 103, 67);
+  padding: 1rem;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  z-index: 999;
+}
+.cart-sidebar.open {
+  right: 0; /* show sidebar */
+}
 .menu {
   display: flex;
   flex-direction: column;

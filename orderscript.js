@@ -1,6 +1,7 @@
 console.log("Order script loaded");
 
-let cart = [];
+let cart = []; // cart state //
+
 // tab functional //
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".order-nav");
@@ -24,50 +25,60 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// cart logic //
+// Click listener for add buttons
 document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("add-button")) {
-    const name = e.target.dataset.name;
-    const price = parseFloat(e.target.dataset.price);
+  const button = e.target.closest(".add-button");
+  if (!button) return;
 
-    addToCart(name, price);
-  }
+  const name = button.dataset.name;
+  const price = parseFloat(button.dataset.price);
+
+  addToCart(name, price);
 });
 
 function addToCart(name, price) {
-  const existingItem = cart.find((item) => item.name === name);
-  if (existingItem) {
-    existingItem.quantity++;
-  } else {
-    cart.push({
-      name: name,
-      price: price,
-      quantity: 1,
-    });
-  }
+  cart.push({ name, price, quantity: 1 });
+
+  console.log("Added:", name);
+  console.log("Cart:", cart);
+
+  renderCart();
 }
 
-// cart rendering //
 function renderCart() {
-  const cartItemsContainer = document.getElementById("cart-items");
-  const cartTotalContainer = document.getElementById("cart-total");
+  const cartItems = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+  const cartCount = document.getElementById("cart-count");
 
-  if (!cartItemsContainer || !cartTotalContainer) return;
-  cartItemsContainer.innerHTML = "";
+  // VERY IMPORTANT SAFETY CHECK
+  if (!cartItems || !cartTotal)
+    //console.log("Cart elements not found. Skipping render."); //
+    return;
+
+  cartItems.innerHTML = "";
+
   let total = 0;
+  let itemCount = 0;
 
   cart.forEach((item) => {
-    const itemTotal = item.price * item.quantity;
-    total += itemTotal;
+    total += item.price * item.quantity;
+    itemCount += item.quantity;
 
     const div = document.createElement("div");
-    div.classList.add("cart-item");
+    div.textContent = `${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`;
 
-    div.innerHTML = `
-${item.name} x${item.quantity} -$${itemTotal.toFixed(2)}
-`;
-    cartItemsContainer.appendChild(div);
+    cartItems.appendChild(div);
   });
 
-  cartTotalContainer.innerHTML = `<strong>Total: $${total.toFixed(2)}</strong>`;
+  cartTotal.innerHTML = `<strong>Total: $${total.toFixed(2)}</strong>`;
+}
+
+const cartSidebar = document.getElementById("cart-sidebar");
+const cartToggle = document.getElementById("cart-toggle");
+
+if (cartToggle && cartSidebar) {
+  console.log("Cart toggle and sidebar found");
+  cartToggle.addEventListener("click", () => {
+    cartSidebar.classList.toggle("open");
+  });
 }
