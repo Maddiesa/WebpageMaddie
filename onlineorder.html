@@ -42,20 +42,20 @@
         <nav class="nav-wrapper">
           <ul class="nav-list">
             <li>
-              <a href="#" class="order-nav" data-tab="hot-drinks">hot drinks</a>
+              <a href="#" class="order-nav active" data-tab="hot-drinks">hot drinks</a>
             </li>
             <li>
-              <a href="#" class="order-nav" data-tab="cold-drinks"
+              <a href="#" class="order-nav " data-tab="cold-drinks"
                 >cold drinks</a
               >
             </li>
             <li>
-              <a href="#" class="order-nav" data-tab="brekkie">brekkie</a>
+              <a href="#" class="order-nav " data-tab="brekkie">brekkie</a>
             </li>
             <li>
-              <a href="#" class="order-nav" data-tab="dessert">dessert</a>
+              <a href="#" class="order-nav " data-tab="dessert">dessert</a>
             </li>
-            <li><a href="#" class="order-nav" data-tab="lunch">lunch</a></li>
+            <li><a href="#" class="order-nav " data-tab="lunch">lunch</a></li>
           </ul>
         </nav>
       </div>
@@ -65,15 +65,35 @@
         <div class="menu-item">
           <span>Latte</span>
           <span>$3.00</span>
-          <span class="item-description">Espresso with steamed milk</span>
-          <span class="item-description">Add a flavor shot for $0.50</span>
-          <button onClick="addToCart('Latte')">Add to Cart</button>
+          <button class="add-button" data-name="Latte" data-price="3.00">
+            Add to Cart
+          </button>
         </div>
+        <div class="menu-item">
+          <span>Latte</span>
+          <span>$3.00</span>
+          <button class="add-button" data-name="Latte" data-price="3.00">
+            Add to Cart
+          </button>
       </section>
 
-      <section class="tab-content" id="cold-drinks"></section>
+      <section class="tab-content" id="cold-drinks">
+        <div class="menu-item">
+          <span>Iced latte</span>
+          <span>$3.00</span>
+          <button class="add-button" data-name="Iced-latte" data-price="3.00">
+            Add to Cart
+          </button>
+      </section>
 
-      <section class="tab-content" id="brekkie"></section>
+      <section class="tab-content" id="brekkie">
+        <div class="menu-item">
+          <span>Syrniki</span>
+          <span>$3.00</span>
+          <button class="add-button" data-name="Syrniki" data-price="3.00">
+            Add to Cart
+          </button>
+      </section>
 
       <section class="tab-content" id="dessert"></section>
 

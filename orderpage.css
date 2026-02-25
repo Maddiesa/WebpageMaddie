@@ -60,16 +60,27 @@ body {
 }
 
 .menu-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgb(64, 77, 44);
 }
-.menu-item button {
-  background-color: grey;
+
+.item-price {
+  /* idk vad detta gör, kan ej se skillnad */
+  margin-right: 2rem;
+}
+.add-button {
+  padding: 0.5rem 1rem;
+  background-color: rgb(64, 44, 44);
   color: white;
   border: 1px solid black;
-  padding: 5px 10px;
   cursor: pointer;
+  position: relative;
+  margin-left: 2rem;
 }
+
 .order-nav.active {
   /*girl what*/
   text-decoration: underline;
@@ -128,8 +139,7 @@ body {
   gap: 1rem; /* space between nav items */
   list-style: none;
   margin: 0;
-  padding: 0;
-  font-size: 5%; /* smaller font size for nav */
+  padding: 0 1rem; /* padding for better touch targets */
   white-space: nowrap; /* prevent wrapping */
 }
 .nav-wrapper {
@@ -142,7 +152,7 @@ body {
 .nav-list a {
   color: white;
   text-decoration: none;
-  font-size: 2.5vw; /* responsive font size */
+  font-size: 2vw; /* responsive font size */
   scroll-snap-align: start; /* snap to start of item */
 }
 .nav-list a:hover {
