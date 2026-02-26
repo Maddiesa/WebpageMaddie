@@ -65,13 +65,15 @@ body {
   /*fixa font och färger*/
   position: absolute;
   background-color: rgb(64, 77, 44);
-  border: 0.2vw solid rgb(89, 103, 67);
-  top: 5%;
+  top: 23%;
+  border: none;
+  border-radius: 0.3rem;
   right: 3%;
   z-index: 1000;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  font-family: "Zalando Sans Expanded";
 }
 .cart-sidebar {
   position: fixed;
@@ -114,12 +116,14 @@ body {
 }
 .add-button {
   padding: 0.5rem 1rem;
-  background-color: rgb(64, 44, 44);
+  background-color: rgb(32, 40, 30); /*bakgrund färg på knappen*/
   color: white;
   border: 1px solid black;
   cursor: pointer;
   position: relative;
   margin-left: 2rem;
+  font-family: "Zalando Sans Expanded";
+  border-radius: 0.3rem;
 }
 
 .order-nav.active {
@@ -151,7 +155,7 @@ body {
 .order-navbar {
   position: relative;
   width: 100%;
-  margin-top: 2vw;
+  margin-top: 6vw;
   top: 0;
   z-index: 1;
   display: inline-block;
