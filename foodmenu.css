@@ -48,3 +48,8 @@ body {
   text-align: center;
   z-index: 3;
 }
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 4vw;
+}
