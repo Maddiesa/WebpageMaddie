@@ -61,16 +61,20 @@ body {
   color: white;
   z-index: 1;
 }
+.cart-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1000;
+}
 .cart-toggle {
   /*fixa font och färger*/
-  position: absolute;
   background-color: rgb(64, 77, 44);
-  top: 23%;
   border: none;
   border-radius: 0.3rem;
-  right: 3%;
-  z-index: 1000;
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
+  outline: 1px solid red;
   cursor: pointer;
   color: white;
   font-family: "Zalando Sans Expanded";
@@ -143,6 +147,7 @@ body {
   color: white;
   text-decoration: none;
   position: relative;
+  z-index: 10;
 }
 .order-nav.active {
   background-color: rgb(127, 148, 92); /*bakgrund på tabs*/
@@ -155,13 +160,12 @@ body {
 .order-navbar {
   position: relative;
   width: 100%;
-  margin-top: 6vw;
-  top: 0;
-  z-index: 1;
-  display: inline-block;
+  margin-top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: rgb(64, 77, 44); /*bakgrund bakom tabs, mörk*/
-  padding-bottom: 0;
   padding-top: 1vw;
 }
 
@@ -181,16 +185,16 @@ body {
 .nav-list {
   display: flex;
   justify-content: space-evenly;
-  gap: 1rem; /* space between nav items */
+  gap: 1.5rem; /* space between nav items */
   list-style: none;
   margin: 0;
-  padding: 0 1rem; /* padding for better touch targets */
+  padding: 0; /* padding for better touch targets */
   white-space: nowrap; /* prevent wrapping */
 }
 .nav-wrapper {
-  width: 100%;
   overflow-x: auto; /* swipeable */
   scroll-snap-type: x mandatory; /* snap to items */
+  flex: 1;
 }
 
 /*links*/
@@ -204,6 +208,9 @@ body {
   text-decoration: underline;
 }
 .nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
 }

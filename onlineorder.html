@@ -37,7 +37,16 @@
       <h1 class="hero-subtitle">café & bakery</h1>
     </section>
     <div class="hero-spacer"></div>
-
+<!-- cart button-->
+ <div class="cart-toggle-wrap">
+ <button id="cart-toggle" class="cart-toggle">your Cart (<span id="cart-count">0</span>)</button>
+ </div>
+  <!-- cart sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <h2>Your Cart:</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+    </div>  
 
     <!-- ORDER SECTION -->
     <header class="order-navbar">
@@ -62,7 +71,6 @@
             <li><a href="#" class="order-nav " data-tab="lunch">lunch</a></li>
           </ul>
         </nav>
-      </div>
     </header>
     <main class="tab-container">
       <section class="tab-content active" id="hot-drinks">
@@ -113,14 +121,5 @@
     </main>
     
     <script src="orderscript.js"></script>
-    <!-- cart button!-->
-    <button id="cart-toggle" class="cart-toggle">your Cart (<span id="cart-count">0</span>)</button>
-    <!-- cart sidebar -->
-    <div id="cart-sidebar" class="cart-sidebar">
-        <h2>Your Cart:</h2>
-        <div id="cart-items"></div>
-        <div id="cart-total"></div>
-    </div>
-
   </body>
 </html>
