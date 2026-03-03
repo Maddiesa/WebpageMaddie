@@ -1,6 +1,6 @@
 console.log("Order script loaded");
 
-let cart = []; // cart state //
+let cart = JSON.parse(sessionStorage.getItem("cart")) || []; // cart state //
 
 // tab functional //
 document.addEventListener("DOMContentLoaded", () => {
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //cart toggle //
 const cartSidebar = document.getElementById("cart-sidebar");
 const cartToggle = document.getElementById("cart-toggle");
+
 if (cartSidebar && cartToggle) {
   //open n close cart//
   cartToggle.addEventListener("click", function (e) {
@@ -68,6 +69,7 @@ function addToCart(name, price) {
   console.log("Cart:", cart);
 
   renderCart();
+  sessionStorage.setItem("cart", JSON.stringify(cart));
 }
 
 function renderCart() {
@@ -101,3 +103,14 @@ function renderCart() {
     cartCount.textContent = itemCount;
   }
 }
+const clearCartBtn = document.getElementById("clear-cart");
+
+if (clearCartBtn) {
+  clearCartBtn.addEventListener("click", () => {
+    cart = [];
+    sessionStorage.removeItem("cart");
+    renderCart();
+  });
+}
+
+renderCart();
