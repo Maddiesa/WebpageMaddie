@@ -53,3 +53,22 @@ body {
   flex-direction: column;
   padding: 4vw;
 }
+
+.home-button {
+  display: inline-block;
+  margin: 1rem;
+  background-color: rgb(40, 47, 29);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: "Zalando Sans Expanded", Arial, sans-serif;
+  position: absolute;
+  z-index: 1000;
+  top: 20px;
+  left: 60px;
+  transform: translateX(-50%);
+}
+.home-button:hover {
+  background-color: aliceblue;
+}
