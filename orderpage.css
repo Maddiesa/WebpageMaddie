@@ -9,6 +9,7 @@ body {
 .hero {
   position: relative;
   width: 100%;
+  z-index: 1;
 }
 
 .hero-bg {
@@ -73,8 +74,8 @@ body {
   background-color: rgb(64, 77, 44);
   border: none;
   border-radius: 0.3rem;
-  padding: 1rem 2rem;
-  outline: 1px solid red;
+  padding: 0.5rem 2rem;
+  outline: none;
   cursor: pointer;
   color: white;
   font-family: "Zalando Sans Expanded";
@@ -92,7 +93,7 @@ body {
   transform: translateX(100%); /* should be hidden*/
   transition: transform 0.3s ease;
   overflow-y: auto; /* for scrolling */
-  z-index: 999;
+  z-index: 2000;
   box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
 }
 .cart-sidebar.open {
@@ -130,19 +131,12 @@ body {
   border-radius: 0.3rem;
 }
 
-.order-nav.active {
-  /*girl what*/
-  text-decoration: underline;
-  background-color: rgb(64, 77, 44);
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-}
 /* NAV */
 :root {
   --nav-height: 60px;
 }
 .order-nav {
-  display: inline-block;
+  display: flex;
   padding: 1rem;
   color: white;
   text-decoration: none;
@@ -162,8 +156,6 @@ body {
   width: 100%;
   margin-top: 0;
   z-index: 1000;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: rgb(64, 77, 44); /*bakgrund bakom tabs, mörk*/
   padding-top: 1vw;
@@ -184,17 +176,17 @@ body {
 /* swipe contain*/
 .nav-list {
   display: flex;
-  justify-content: space-evenly;
-  gap: 1.5rem; /* space between nav items */
+  justify-content: center;
+  gap: 2rem; /* space between nav items */
   list-style: none;
   margin: 0;
   padding: 0; /* padding for better touch targets */
   white-space: nowrap; /* prevent wrapping */
+  flex-wrap: wrap; /*smaller screen*/
 }
 .nav-wrapper {
-  overflow-x: auto; /* swipeable */
-  scroll-snap-type: x mandatory; /* snap to items */
-  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 /*links*/
@@ -209,9 +201,9 @@ body {
 }
 .nav-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1200px; /*centering*/
   margin: 0 auto;
 }
 .tab-content {
@@ -243,4 +235,27 @@ body {
   .nav-list {
     gap: 2rem; /* more space between items on desktop */
   }
+}
+@media (max-width: 900px) {
+  .nav-list {
+    gap: 1.2rem;
+  }
+}
+.home-button {
+  display: inline-block;
+  margin: 1rem;
+  background-color: rgb(40, 47, 29);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: "Zalando Sans Expanded", Arial, sans-serif;
+  position: absolute;
+  z-index: 1000;
+  top: 20px;
+  left: 60px;
+  transform: translateX(-50%);
+}
+.home-button:hover {
+  background-color: aliceblue;
 }

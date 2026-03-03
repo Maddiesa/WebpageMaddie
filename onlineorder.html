@@ -17,6 +17,8 @@
   </head>
 
   <body>
+      <a href="index.html" class="home-button">Home</a>
+
     <!-- HERO SECTION -->
     <section class="hero">
       <img
@@ -39,39 +41,36 @@
     <div class="hero-spacer"></div>
 <!-- cart button-->
  <div class="cart-toggle-wrap">
+
  <button id="cart-toggle" class="cart-toggle">your Cart (<span id="cart-count">0</span>)</button>
+ <!-- <button id="cart-toggle" onclick="alert('clicked')">
+  TEST CLICK
+</button> -->
  </div>
   <!-- cart sidebar -->
     <div id="cart-sidebar" class="cart-sidebar">
         <h2>Your Cart:</h2>
         <div id="cart-items"></div>
         <div id="cart-total"></div>
+        <button id="clear-cart" class="clear-cart">clear cart</button>
     </div>  
 
     <!-- ORDER SECTION -->
-    <header class="order-navbar">
+  <header class="order-navbar">
+  <div class="inner-nav">
 
-      <div class="inner-nav">
-        <nav class="nav-wrapper">
-          <ul class="nav-list">
-            <li>
-              <a href="#" class="order-nav active" data-tab="hot-drinks">hot drinks</a>
-            </li>
-            <li>
-              <a href="#" class="order-nav " data-tab="cold-drinks"
-                >cold drinks</a
-              >
-            </li>
-            <li>
-              <a href="#" class="order-nav " data-tab="brekkie">brekkie</a>
-            </li>
-            <li>
-              <a href="#" class="order-nav " data-tab="dessert">dessert</a>
-            </li>
-            <li><a href="#" class="order-nav " data-tab="lunch">lunch</a></li>
-          </ul>
-        </nav>
-    </header>
+    <nav class="nav-wrapper">
+      <ul class="nav-list">
+        <li><a href="#" class="order-nav active" data-tab="hot-drinks">hot drinks</a></li>
+        <li><a href="#" class="order-nav" data-tab="cold-drinks">cold drinks</a></li>
+        <li><a href="#" class="order-nav" data-tab="brekkie">brekkie</a></li>
+        <li><a href="#" class="order-nav" data-tab="dessert">dessert</a></li>
+        <li><a href="#" class="order-nav" data-tab="lunch">lunch</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
     <main class="tab-container">
       <section class="tab-content active" id="hot-drinks">
         <div class="menu-item">

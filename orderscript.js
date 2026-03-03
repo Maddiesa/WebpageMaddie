@@ -24,7 +24,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
+//cart toggle //
+const cartSidebar = document.getElementById("cart-sidebar");
+const cartToggle = document.getElementById("cart-toggle");
+if (cartSidebar && cartToggle) {
+  //open n close cart//
+  cartToggle.addEventListener("click", function (e) {
+    e.stopPropagation(); // prevents insta close //
+    cartSidebar.classList.toggle("open");
+  });
+  // close when clicking outside //
+  document.addEventListener("click", function (e) {
+    if (!cartSidebar.classList.contains("open")) return;
+    if (!cartSidebar.contains(e.target) && !cartToggle.contains(e.target)) {
+      cartSidebar.classList.remove("open");
+    }
+  });
+}
 // Click listener for add buttons
 document.addEventListener("click", function (e) {
   const button = e.target.closest(".add-button");
@@ -85,27 +101,3 @@ function renderCart() {
     cartCount.textContent = itemCount;
   }
 }
-// Cart toggle behöver justera men pallar inte idag lol //
-const cartSidebar = document.getElementById("cart-sidebar");
-const cartToggle = document.getElementById("cart-toggle");
-
-if (cartToggle && cartSidebar) {
-  console.log("Cart toggle and sidebar found");
-  cartToggle.addEventListener("click", () => {
-    cartSidebar.classList.toggle("open");
-  });
-}
-document.addEventListener("DOMContentLoaded", function () {
-  const cartSidebar = document.getElementById("cart-sidebar");
-  const cartToggle = document.getElementById("cart-toggle");
-
-  if (!cartSidebar || !cartToggle) {
-    console.error("Cart toggle or sidebar not found.");
-    return;
-  }
-
-  cartToggle.addEventListener("click", function () {
-    cartSidebar.classList.toggle("open");
-    console.log("Cart toggled");
-  });
-});
