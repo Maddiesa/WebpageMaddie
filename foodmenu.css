@@ -50,8 +50,32 @@ body {
 }
 .menu {
   display: flex;
-  flex-direction: column;
+  gap: 4vw;
   padding: 4vw;
+  padding-top: 10vw;
+  flex-wrap: wrap;
+}
+
+.menu-column {
+  flex: 1;
+  min-width: 20px;
+}
+.menu-title {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+.menu-item {
+  margin-bottom: 2rem;
+}
+.item-name {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.item-description {
+  font-size: 0.8rem;
+}
+.item-price {
+  font-weight: bold;
 }
 
 .home-button {
