@@ -1,10 +1,10 @@
-console.log("Order script loaded");
+console.log("Order script loaded"); // eventListener from lectures - side bar toggle mdn (classList.toggle), w3 for js example of cart. //
 
-let cart = JSON.parse(sessionStorage.getItem("cart")) || []; // cart state //
+let cart = JSON.parse(sessionStorage.getItem("cart")) || []; // cart state, lectures //
 
 // tab functional //
 document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll(".order-nav");
+  const navLinks = document.querySelectorAll(".order-nav"); //lectures //
   const tabs = document.querySelectorAll(".tab-content");
 
   navLinks.forEach((link) => {
@@ -29,9 +29,9 @@ const cartSidebar = document.getElementById("cart-sidebar");
 const cartToggle = document.getElementById("cart-toggle");
 
 if (cartSidebar && cartToggle) {
-  //open n close cart//
+  //open n close cart, some prev knowledge from foundations of programming //
   cartToggle.addEventListener("click", function (e) {
-    e.stopPropagation(); // prevents insta close //
+    e.stopPropagation(); // prevents insta close, mdn //
     cartSidebar.classList.toggle("open");
   });
   // close when clicking outside //
@@ -54,11 +54,12 @@ document.addEventListener("click", function (e) {
 });
 
 function addToCart(name, price) {
-  const existingItem = cart.find((item) => item.name === name);
+  const existingItem = cart.find((item) => item.name === name); // find to check if item exists
   if (existingItem) {
     existingItem.quantity++;
   } else {
     cart.push({
+      // lectures + mdn for arrays
       name: name,
       price: price,
       quantity: 1,
@@ -69,7 +70,7 @@ function addToCart(name, price) {
   console.log("Cart:", cart);
 
   renderCart();
-  sessionStorage.setItem("cart", JSON.stringify(cart));
+  sessionStorage.setItem("cart", JSON.stringify(cart)); // lectures
 }
 
 function renderCart() {
@@ -103,7 +104,7 @@ function renderCart() {
     cartCount.textContent = itemCount;
   }
 }
-const clearCartBtn = document.getElementById("clear-cart");
+const clearCartBtn = document.getElementById("clear-cart"); // mdn
 
 if (clearCartBtn) {
   clearCartBtn.addEventListener("click", () => {

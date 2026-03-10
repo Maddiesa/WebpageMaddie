@@ -48,11 +48,35 @@ body {
   text-align: center;
   z-index: 3;
 }
-
+/*menu from a combo of lectures and mdn*/
 .menu {
   display: flex;
-  flex-direction: column;
+  gap: 4vw;
   padding: 4vw;
+  padding-top: 10vw;
+  flex-wrap: wrap;
+}
+
+.menu-column {
+  flex: 1;
+  min-width: 20px;
+}
+.menu-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.menu-item {
+  margin-bottom: 2rem;
+}
+.item-name {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.item-description {
+  font-size: 0.9rem;
+}
+.item-price {
+  font-weight: bold;
 }
 .home-button {
   display: inline-block;
@@ -71,4 +95,13 @@ body {
 }
 .home-button:hover {
   background-color: aliceblue;
+}
+@media screen and (max-width: 400px) {
+  /*responsiveness, lectures*/
+  .menu {
+    flex-direction: column;
+  }
+  .menu-column {
+    min-width: 100%;
+  }
 }

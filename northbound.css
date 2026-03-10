@@ -1,3 +1,4 @@
+/* mainly looked at lectures and mdn, but some ai to help explain further about specific values*/
 /* makes page  full height */
 body {
   height: 100%;
@@ -226,7 +227,7 @@ body {
   transition: all 0.5s ease;
 }
 
-/*responsive*/
+/*responsive, from lectures*/
 @media (max-width: 767px) {
   .footer-col {
     width: 50%;

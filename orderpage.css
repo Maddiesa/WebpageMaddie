@@ -102,7 +102,7 @@ body {
 .menu {
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: center;
   width: 100%;
   padding: 6vw;
 }
@@ -161,14 +161,14 @@ body {
   padding-top: 1vw;
 }
 
-.swipe-nav {
+/*.swipe-nav {
   display: flex;
   align-items: center;
   width: 100%;
   position: relative;
 }
 
-/*scroll contain*/
+/*scroll contain
 .nav-container {
   width: 100%;
   overflow-x: auto;
