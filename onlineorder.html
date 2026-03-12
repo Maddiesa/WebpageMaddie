@@ -13,11 +13,11 @@
       href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="data:,">
+    <link rel="icon" href="data:," />
   </head>
 
   <body>
-      <a href="index.html" class="home-button">Home</a>
+    <a href="index.html" class="home-button">Home</a>
 
     <!-- HERO SECTION, same image sources -->
     <section class="hero">
@@ -39,45 +39,60 @@
       <h1 class="hero-subtitle">café & bakery</h1>
     </section>
     <div class="hero-spacer"></div>
-<!-- cart button, toggle stuff w3school and mdn-->
- <div class="cart-toggle-wrap">
-
- <button id="cart-toggle" class="cart-toggle">your Cart (<span id="cart-count">0</span>)</button>
- <!-- <button id="cart-toggle" onclick="alert('clicked')">
+    <!-- cart button, toggle stuff w3school and mdn-->
+    <div class="cart-toggle-wrap">
+      <button id="cart-toggle" class="cart-toggle">
+        your Cart (<span id="cart-count">0</span>)
+      </button>
+      <!-- <button id="cart-toggle" onclick="alert('clicked')">
   TEST CLICK
 </button> -->
- </div>
-  <!-- cart sidebar -->
+    </div>
+    <!-- cart sidebar -->
     <div id="cart-sidebar" class="cart-sidebar">
-        <h2>Your Cart:</h2>
-        <div id="cart-items"></div>
-        <div id="cart-total"></div>
-        <button id="clear-cart" class="clear-cart">clear cart</button>
-    </div>  
+      <h2>Your Cart:</h2>
+      <div id="cart-items"></div>
+      <div id="cart-total"></div>
+      <button id="clear-cart" class="clear-cart">clear cart</button>
+    </div>
 
     <!-- ORDER SECTION -->
-  <header class="order-navbar">
-  <div class="inner-nav">
-
-    <nav class="nav-wrapper">
-      <ul class="nav-list">
-        <li><a href="#" class="order-nav active" data-tab="hot-drinks">hot drinks</a></li>
-        <li><a href="#" class="order-nav" data-tab="cold-drinks">cold drinks</a></li>
-        <li><a href="#" class="order-nav" data-tab="brekkie">brekkie</a></li>
-        <li><a href="#" class="order-nav" data-tab="dessert">dessert</a></li>
-        <li><a href="#" class="order-nav" data-tab="lunch">lunch</a></li>
-      </ul>
-    </nav>
-
-  </div>
-</header> 
-<!--Sort and style this better for each category-->
+    <header class="order-navbar">
+      <div class="inner-nav">
+        <nav class="nav-wrapper">
+          <ul class="nav-list">
+            <li>
+              <a href="#" class="order-nav active" data-tab="hot-drinks"
+                >hot drinks</a
+              >
+            </li>
+            <li>
+              <a href="#" class="order-nav" data-tab="cold-drinks"
+                >cold drinks</a
+              >
+            </li>
+            <li>
+              <a href="#" class="order-nav" data-tab="brekkie">brekkie</a>
+            </li>
+            <li>
+              <a href="#" class="order-nav" data-tab="dessert">dessert</a>
+            </li>
+            <li><a href="#" class="order-nav" data-tab="lunch">lunch</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!--Sort and style this better for each category-->
     <main class="tab-container">
       <section class="tab-content active" id="hot-drinks">
         <div class="menu-item">
           <span>Regular black coffee</span>
-          <span>$3.00</span>
-          <button class="add-button" data-name="Regular-coffee" data-price="3.00">
+          <span>$2.00</span>
+          <button
+            class="add-button"
+            data-name="Regular-coffee"
+            data-price="2.00"
+          >
             Add to Cart
           </button>
         </div>
@@ -90,36 +105,117 @@
         </div>
         <div class="menu-item">
           <span>Cappuccino</span>
-          <span>$5.00</span>
-          <button class="add-button" data-name="Cappuccino" data-price="5.00">
+          <span>$4.00</span>
+          <button class="add-button" data-name="Cappuccino" data-price="4.00">
             Add to Cart
           </button>
-          </div>
+        </div>
       </section>
 
       <section class="tab-content" id="cold-drinks">
         <div class="menu-item">
           <span>Iced latte</span>
-          <span>$3.00</span>
-          <button class="add-button" data-name="Iced-latte" data-price="3.00">
+          <span>$3.50</span>
+          <button class="add-button" data-name="Iced Latte" data-price="3.50">
             Add to Cart
           </button>
+        </div>
+        <div class="menu-item">
+          <span>Iced Americano</span>
+          <span>$2.50</span>
+          <button
+            class="add-button"
+            data-name="Iced Americano"
+            data-price="2.50"
+          >
+            Add to Cart
+          </button>
+        </div>
+        <div class="menu-item">
+          <span>Apple juice</span>
+          <span>$2.00</span>
+          <button class="add-button" data-name="Juice" data-price="2.00">
+            Add to Cart
+          </button>
+        </div>
       </section>
 
       <section class="tab-content" id="brekkie">
         <div class="menu-item">
-          <span>Syrniki</span>
-          <span>$3.00</span>
-          <button class="add-button" data-name="Syrniki" data-price="3.00">
+          <span>Syrniki 5 pieces</span>
+          <span>$4.00</span>
+          <button class="add-button" data-name="Syrniki" data-price="4.00">
             Add to Cart
           </button>
+        </div>
+
+        <div class="menu-item">
+          <span>Scrambled Eggs</span>
+          <span>$2.00</span>
+          <button class="add-button" data-name="Eggs" data-price="2.00">
+            Add to Cart
+          </button>
+        </div>
+
+        <div class="menu-item">
+          <span>Yoghurt Bowl</span>
+          <span>$3.00</span>
+          <button class="add-button" data-name="Yoghurt" data-price="3.00">
+            Add to Cart
+          </button>
+        </div>
       </section>
 
-      <section class="tab-content" id="dessert"></section>
+      <section class="tab-content" id="dessert">
+        <div class="menu-item">
+          <span>Kladdkaka</span>
+          <span>$3.00</span>
+          <button class="add-button" data-name="Kladdkaka" data-price="3.00">
+            Add to Cart
+          </button>
+        </div>
 
-      <section class="tab-content" id="lunch"></section>
+        <div class="menu-item">
+          <span>Medovik</span>
+          <span>$3.00</span>
+          <button class="add-button" data-name="Medovik" data-price="3.00">
+            Add to Cart
+          </button>
+        </div>
+
+        <div class="menu-item">
+          <span>Princesstårta</span>
+          <span>$3.00</span>
+          <button class="add-button" data-name="Yoghurt" data-price="3.00">
+            Add to Cart
+          </button>
+        </div>
+      </section>
+      <section class="tab-content" id="lunch">
+        <div class="menu-item">
+          <span>Borsch</span>
+          <span>$4.00</span>
+          <button class="add-button" data-name="Borsch" data-price="4.00">
+            Add to Cart
+          </button>
+        </div>
+        <div class="menu-item">
+          <span>Rosol</span>
+          <span>$3.00</span>
+          <button class="add-button" data-name="Rosol" data-price="3.00">
+            Add to Cart
+          </button>
+        </div>
+        <div class="menu-item">
+          <span>Caesar Salad</span>
+          <span>$4.50</span>
+          <button class="add-button" data-name="Caesar Salad" data-price="4.50">
+            Add to Cart
+          </button>
+        </div>
+      </section>
     </main>
-    
+
     <script src="orderscript.js"></script>
   </body>
 </html>

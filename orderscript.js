@@ -1,10 +1,10 @@
-console.log("Order script loaded"); // eventListener from lectures - side bar toggle mdn (classList.toggle), w3 for js example of cart. //
+console.log("Order script loaded"); // eventListener from lectures - sidebar toggle MDN (classList.toggle), W3 example cart //
 
 let cart = JSON.parse(sessionStorage.getItem("cart")) || []; // cart state, lectures //
 
-// tab functional //
+// tab function //
 document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll(".order-nav"); //lectures //
+  const navLinks = document.querySelectorAll(".order-nav"); // lectures //
   const tabs = document.querySelectorAll(".tab-content");
 
   navLinks.forEach((link) => {
@@ -18,31 +18,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
       tabs.forEach((tab) => tab.classList.remove("active"));
       navLinks.forEach((nav) => nav.classList.remove("active"));
+
       // activate clicked tab //
       targetTab.classList.add("active");
       link.classList.add("active");
     });
   });
 });
-//cart toggle //
+
+// side bar toggle //
 const cartSidebar = document.getElementById("cart-sidebar");
 const cartToggle = document.getElementById("cart-toggle");
 
 if (cartSidebar && cartToggle) {
-  //open n close cart, some prev knowledge from foundations of programming //
+  // open & close cart //
   cartToggle.addEventListener("click", function (e) {
-    e.stopPropagation(); // prevents insta close, mdn //
+    e.stopPropagation(); // prevents instant close, MDN //
     cartSidebar.classList.toggle("open");
   });
+
   // close when clicking outside //
   document.addEventListener("click", function (e) {
     if (!cartSidebar.classList.contains("open")) return;
+
     if (!cartSidebar.contains(e.target) && !cartToggle.contains(e.target)) {
       cartSidebar.classList.remove("open");
     }
   });
 }
-// Click listener for add buttons
+
+//add to cart button//
 document.addEventListener("click", function (e) {
   const button = e.target.closest(".add-button");
   if (!button) return;
@@ -53,13 +58,15 @@ document.addEventListener("click", function (e) {
   addToCart(name, price);
 });
 
+//add to cart func //
 function addToCart(name, price) {
-  const existingItem = cart.find((item) => item.name === name); // find to check if item exists
+  const existingItem = cart.find((item) => item.name === name); // check if item exists
+
   if (existingItem) {
     existingItem.quantity++;
   } else {
     cart.push({
-      // lectures + mdn for arrays
+      // lectures + MDN arrays
       name: name,
       price: price,
       quantity: 1,
@@ -69,19 +76,34 @@ function addToCart(name, price) {
   console.log("Added:", name);
   console.log("Cart:", cart);
 
-  renderCart();
   sessionStorage.setItem("cart", JSON.stringify(cart)); // lectures
+  renderCart();
 }
 
+// remove from cart //
+document.addEventListener("click", function (e) {
+  const removeBtn = e.target.closest(".remove-item");
+  if (!removeBtn) return;
+
+  const name = removeBtn.dataset.name;
+  removeFromCart(name);
+});
+
+function removeFromCart(name) {
+  cart = cart.filter((item) => item.name !== name);
+
+  sessionStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+// cart render //
 function renderCart() {
   const cartItems = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
   const cartCount = document.getElementById("cart-count");
 
-  // VERY IMPORTANT SAFETY CHECK
-  if (!cartItems || !cartTotal)
-    //console.log("Cart elements not found. Skipping render."); //
-    return;
+  // safety check
+  if (!cartItems || !cartTotal) return;
 
   cartItems.innerHTML = "";
 
@@ -93,7 +115,11 @@ function renderCart() {
     itemCount += item.quantity;
 
     const div = document.createElement("div");
-    div.textContent = `${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`;
+
+    div.innerHTML = `
+      ${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}
+      <button class="remove-item" data-name="${item.name}">remove</button>
+    `;
 
     cartItems.appendChild(div);
   });
@@ -104,7 +130,9 @@ function renderCart() {
     cartCount.textContent = itemCount;
   }
 }
-const clearCartBtn = document.getElementById("clear-cart"); // mdn
+
+/// clearing cart //
+const clearCartBtn = document.getElementById("clear-cart"); // MDN
 
 if (clearCartBtn) {
   clearCartBtn.addEventListener("click", () => {
@@ -114,4 +142,5 @@ if (clearCartBtn) {
   });
 }
 
+// inital render //
 renderCart();

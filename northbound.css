@@ -151,7 +151,7 @@ body {
 .spacer {
   flex: 1; /* takes all available vertical space */
 }
-/* FOOTER */
+/* FOOTER, quackit */
 .footer {
   position: relative;
   bottom: -150px; /* adjust as needed to overlap content */

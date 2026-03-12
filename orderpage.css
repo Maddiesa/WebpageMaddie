@@ -55,9 +55,8 @@ body {
 .cart {
   top: 25%;
   width: 20vw;
-  height: 4vw;
+  height: 1vw;
   background-color: rgb(89, 103, 67);
-  padding: 1rem;
   border-radius: 8px;
   color: white;
   z-index: 1;
@@ -99,6 +98,13 @@ body {
 .cart-sidebar.open {
   transform: translate(0);
 }
+#cart-items div {
+  /*MDN, flexbox, justify & align*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 .menu {
   display: flex;
   flex-direction: column;
@@ -111,7 +117,7 @@ body {
   display: grid;
   grid-template-columns: 1fr auto auto;
   align-items: center;
-  padding: 0.8rem 0;
+  padding: 1rem 0;
   border-bottom: 1px solid rgb(64, 77, 44);
 }
 
@@ -130,7 +136,21 @@ body {
   font-family: "Zalando Sans Expanded";
   border-radius: 0.3rem;
 }
+.remove-item {
+  margin-left: 10px;
+  padding: 3px 8px;
+  border: none;
+  background-color: #1a3416;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Zalando Sans Expanded";
+}
 
+.remove-item:hover {
+  background-color: #a63737;
+}
 /* NAV */
 :root {
   --nav-height: 60px;
@@ -161,18 +181,6 @@ body {
   padding-top: 1vw;
 }
 
-/*.swipe-nav {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  position: relative;
-}
-
-/*scroll contain
-.nav-container {
-  width: 100%;
-  overflow-x: auto;
-}
 /* swipe contain*/
 .nav-list {
   display: flex;
