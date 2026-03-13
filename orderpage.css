@@ -83,7 +83,7 @@ body {
   position: fixed;
   top: 0;
   right: 0; /* hidden unless opened */
-  width: 350px;
+  width: 300px;
   max-width: 90vw;
   height: 100vh;
   background-color: rgb(89, 103, 67);
