@@ -136,11 +136,14 @@ body {
   font-family: "Zalando Sans Expanded";
   border-radius: 0.3rem;
 }
+.add-button:hover {
+  text-decoration: underline;
+}
 .remove-item {
   margin-left: 10px;
   padding: 3px 8px;
   border: none;
-  background-color: #1a3416;
+  background-color: rgb(40, 47, 29);
   color: white;
   font-size: 0.8rem;
   border-radius: 4px;
@@ -149,7 +152,7 @@ body {
 }
 
 .remove-item:hover {
-  background-color: #a63737;
+  background-color: #ac551a;
 }
 /* NAV */
 :root {
@@ -158,7 +161,6 @@ body {
 .order-nav {
   display: flex;
   padding: 1rem;
-  color: white;
   text-decoration: none;
   position: relative;
   z-index: 10;
@@ -215,24 +217,16 @@ body {
   margin: 0 auto;
 }
 .tab-content {
-  display: none; /* hide all content by default */
+  display: none; /* hide all content by default, makes the tabs only display relevant products*/
   width: 100%;
-  background-color: rgb(127, 148, 92); /* ljusgrön bakom menu items lista*/
   padding: 2rem;
   box-sizing: border-box;
   border-radius: 8px;
   color: white;
 }
-.tab-container {
-  max-width: 1200px;
-  background-color: rgb(127, 148, 92); /* ljusgrön bakom menu items lista*/
-  padding: 2rem;
-  margin: 0;
-  z-index: 2;
-  position: relative;
-}
+
 .tab-content.active {
-  display: block; /* show active content */
+  display: block; /* shows active content */
 }
 
 /* desktop*/
@@ -251,27 +245,27 @@ body {
 }
 .home-button {
   display: inline-block;
-  margin: 1rem;
-  background-color: rgb(40, 47, 29);
+  background-color: rgb(127, 148, 92);
   color: white;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
+  padding: 0.6rem 1rem; /*scales w font size*/
+  font-size: clamp(0.8rem, 1.2vw, 1.2rem); /*responsive sizing w clamp, MDN*/
+  padding: clamp(6px, 0.8vw, 12px) clamp(10px, 1.6vw, 20px);
+  border-radius: clamp(4px, 0.5vw, 8px);
   text-decoration: none;
   font-family: "Zalando Sans Expanded", Arial, sans-serif;
   position: absolute;
   z-index: 1000;
-  top: 20px;
-  left: 60px;
-  transform: translateX(-50%);
+  top: 3vw;
+  left: 4vw;
 }
 .home-button:hover {
-  background-color: aliceblue;
+  background-color: rgb(40, 47, 29);
 }
 
 .clear-cart {
   margin-top: 1rem;
   padding: 0.6rem 1rem;
-  background-color: rgb(204, 217, 168);
+  background-color: rgb(127, 148, 92);
   color: white;
   border: none;
   border-radius: 6px;
@@ -279,5 +273,5 @@ body {
   font-family: "Zalando Sans Expanded", Arial, sans-serif;
 }
 .clear-cart:hover {
-  background-color: rgb(67, 65, 37);
+  background-color: rgb(40, 47, 29);
 }
