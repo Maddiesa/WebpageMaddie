@@ -48,17 +48,36 @@ body {
   text-align: center;
   z-index: 3;
 }
+/*menu from a combo of lectures and mdn*/
+.home-button {
+  display: inline-block;
+  background-color: rgb(127, 148, 92);
+  color: white;
+  padding: 0.6rem 1rem; /*scales w font size*/
+  font-size: clamp(0.8rem, 1.2vw, 1.2rem); /*responsive sizing w clamp, MDN*/
+  padding: clamp(6px, 0.8vw, 12px) clamp(10px, 1.6vw, 20px);
+  border-radius: clamp(4px, 0.5vw, 8px);
+  text-decoration: none;
+  font-family: "Zalando Sans Expanded", Arial, sans-serif;
+  position: absolute;
+  z-index: 1000;
+  top: 3vw;
+  left: 4vw;
+}
+.home-button:hover {
+  background-color: rgb(40, 47, 29);
+}
 .menu {
   display: flex;
-  gap: 4vw;
-  padding: 4vw;
-  padding-top: 10vw;
+  gap: 3vw;
+  padding: 3vw;
+  padding-top: 6vw;
   flex-wrap: wrap;
 }
 
 .menu-column {
   flex: 1;
-  min-width: 20px;
+  min-width: 10px;
 }
 .menu-title {
   font-size: 2.3rem;
@@ -68,31 +87,23 @@ body {
   margin-bottom: 2rem;
 }
 .item-name {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin: 0;
+  text-decoration: underline;
 }
 .item-description {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  font-style: italic;
 }
 .item-price {
   font-weight: bold;
 }
-
-.home-button {
-  display: inline-block;
-  margin: 1rem;
-  background-color: rgb(40, 47, 29);
-  color: white;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-family: "Zalando Sans Expanded", Arial, sans-serif;
-  position: absolute;
-  z-index: 1000;
-  top: 20px;
-  left: 60px;
-  transform: translateX(-50%);
-}
-.home-button:hover {
-  background-color: aliceblue;
+@media screen and (max-width: 630px) {
+  /*responsiveness, lectures*/
+  .menu {
+    flex-direction: column;
+  }
+  .menu-column {
+    min-width: 100%;
+  }
 }
